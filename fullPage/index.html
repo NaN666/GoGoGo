@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>fullPage</title>
+		<link rel="shortcut icon" href="img/icon.ico" />
+		<link rel="stylesheet" href="css/jquery.fullPage.css" />
+		<style>
+			ul,li{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			.section{
+				text-align: center;
+				font: 50px "微软雅黑";color: #fff;
+				overflow: hidden;
+				background-repeat: no-repeat;
+				background-position:50% 50% ;
+				background-size: cover;
+			}
+			.section h3{
+				color: #FFF;
+			}
+			#section1 { background-image: url(img/01.jpg);}
+			#section2 { background-image: url(img/02.jpg);}
+			#section3 { background-image: url(img/03.jpg);}
+			#section4 { background-image: url(img/04.jpg);}
+			#section5 { background-image: url(img/05.jpg);}
+			#section6 { background-image: url(img/06.jpg);}
+			
+			.top{
+				position: fixed; left: 0; right: 0; top: 0; z-index: 999;
+				height: 50px; background: rgba(0,0,0,.6);
+			}
+			.menu{
+				width: 1000px; margin: 0 auto; overflow: hidden;
+			}
+			.logo{
+				float: left; margin-top: 9px;
+			}
+			.logo a{
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				background: url(img/LOGO.png);
+				background-size: 32px 32px;
+			}
+			.nav{
+				float: right;
+				margin-top:10px ; font-size: 0;
+			}
+			.nav li{
+				display: inline-block;
+				margin-left: 40px;
+			}
+			.nav a{
+				display: inline-block;
+				height: 30px;
+				font:12px/30px "微软雅黑";
+				color: #FFFFFF;
+			}
+			.nav a:hover{
+				color: #83C3F3;
+			}
+			#fp-nav ul li a span, .fp-slidesNav ul li a span {
+				background-color: #fff;
+				border: none;
+			}
+			#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span{
+				background-color: #4BBFC3;
+			}
+		</style>
+	</head>
+	<body>
+		<section class="top">
+			<div class="menu">
+				<h1 class="logo"><a href="javascript:"></a></h1>
+				<ul class="nav">
+					<li><a href="javascript:">我是NaN</a></li>
+					<li><a href="javascript:">王开楠</a></li>
+					<li><a href="javascript:">大家好啊</a></li>
+					<li><a href="javascript:">嘿嘿哈嘿</a></li>
+					<li><a href="javascript:">YoYo</a></li>
+					<li><a href="javascript:">微博</a></li>
+				</ul>
+			</div>
+		</section>
+		<section id="dowebok">
+			<div class="section" id="section1">
+				<div id="opa"></div>
+				<h3>第1屏</h3>
+				<p>aaa</p>
+			</div>
+			<div class="section" id="section2">
+				<h3>第2屏</h3>
+				<p>bbb</p>
+			</div>
+			<div class="section" id="section3">
+				<h3>第3屏</h3>
+				<p>ccc</p>
+			</div>
+			<div class="section" id="section4">
+				<h3>第4屏</h3>
+				<p>ddd</p>
+			</div>
+			<div class="section" id="section5">
+				<h3>第5屏</h3>
+				<p>eee</p>
+			</div>
+			<div class="section" id="section6">
+				<h3>第6屏</h3>
+				<p>FFF</p>
+			</div>
+		</section>
+		<script type="text/javascript" src="js/jquery-3.1.1.js" ></script>
+		<script src="js/jquery.fullPage.js"></script>
+		<script>
+			$("#dowebok").fullpage({
+				'navigation':true,
+				'continuousVertical':true,
+//				afterload:function(anchorLink,index){
+//					
+//				},
+			});
+			$(window).resize(function(){
+				autoScrolling();
+			});
+			function autoScrolling(){
+		        var $ww = $(window).width();
+		        if($ww < 1024){
+		            $.fn.fullpage.setAutoScrolling(false);
+		        } else {
+		            $.fn.fullpage.setAutoScrolling(true);
+		        }
+		    };
+		    autoScrolling();
+		</script>
+	</body>
+</html>
+        
